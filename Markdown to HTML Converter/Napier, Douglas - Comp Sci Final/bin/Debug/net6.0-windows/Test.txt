@@ -1,0 +1,13 @@
+# Heading 1 test
+# Heading 2 Test
+# Heading 3 test
+> Blockquote test
+**Bold test**
+*Italics test*
+~~Strike through test~~
+---
+- Salt
+- Pepper
+- Garlic
+I need to run `This` code
+Hey I really love [Google](https://www.google.com)

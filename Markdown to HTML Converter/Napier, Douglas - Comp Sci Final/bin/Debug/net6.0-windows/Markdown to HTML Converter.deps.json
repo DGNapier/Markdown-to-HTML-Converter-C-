@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Markdown to HTML Converter/1.0.0": {
+        "runtime": {
+          "Markdown to HTML Converter.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Markdown to HTML Converter/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
