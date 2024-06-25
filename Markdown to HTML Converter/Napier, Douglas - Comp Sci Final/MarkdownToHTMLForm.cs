@@ -29,100 +29,91 @@ namespace Napier__Douglas___Comp_Sci_Final
 
         private void SaveMarkdownAsToolStripMenu_Click(object sender, EventArgs e)
         {
-            DialogResult result;    // Holds result of SaveFileDialog
-            string fileName;        // Holds file name chosen from SaveFileDialog
+            DialogResult result;
+            string fileName;
 
-            // Create and show a SaveFileDialog to enable users choose where to save file
+            
             using (SaveFileDialog filePicker = new SaveFileDialog())
             {
                 filePicker.InitialDirectory = Application.StartupPath;
-                result = filePicker.ShowDialog();   // Show SaveFileDialog
-                fileName = filePicker.FileName;     // File name chosen by user in SaveFileDialog
-            } // end using
+                result = filePicker.ShowDialog();
+                fileName = filePicker.FileName;
+            }
 
-            // If the user clicked the "OK" button in the SaveFileDialog...
+            
             if (result == DialogResult.OK)
             {
                 try
                 {
-                    // Open file with write access
                     FileStream outputStream = new FileStream(fileName, FileMode.OpenOrCreate,
                                                            FileAccess.Write);
 
-                    // Sets file to where data is written
+                    
                     MarkdownFileWriter = new StreamWriter(outputStream);
                     MarkdownFileWriter.Write(MarkdownTextBox.Text);
                     MarkdownFileWriter.Close();
                 }
                 catch (IOException)
                 {
-                    // Notify user if file does not exist
                     MessageBox.Show("Error opening file.", "Error",
                                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 catch (ArgumentException)
                 {
-                    // User closed the SaveFileDialog without clicking s file
-                } // end try
+                    
+                } 
             }
             else
-            {    // Otherwise, show an error message
-                // If the user did not select a file...
+            {    
+                
                 if (string.IsNullOrEmpty(fileName))
                 {
                     MessageBox.Show("Invalid file name.", "Error",
                                     MessageBoxButtons.OK, MessageBoxIcon.Error);
-                } // end if
-            } // end if
+                } 
+            } 
         }
 
         private void SaveHTMLAsToolStripMenu_Click(object sender, EventArgs e)
         {
-            DialogResult result;    // Holds result of SaveFileDialog
-            string fileName;        // Holds file name chosen from SaveFileDialog
+            DialogResult result;
+            string fileName;
 
-            // Create and show a SaveFileDialog to enable users choose where to save file
+            
             using (SaveFileDialog filePicker = new SaveFileDialog())
             {
                 filePicker.InitialDirectory = Application.StartupPath;
-                result = filePicker.ShowDialog();   // Show SaveFileDialog
-                fileName = filePicker.FileName;     // File name chosen by user in SaveFileDialog
-            } // end using
+                result = filePicker.ShowDialog();
+                fileName = filePicker.FileName;
+            }
 
-            // If the user clicked the "OK" button in the SaveFileDialog...
+            
             if (result == DialogResult.OK)
             {
                 try
                 {
-                    // Open file with write access
                     FileStream outputStream = new FileStream(fileName, FileMode.OpenOrCreate,
                                                            FileAccess.Write);
 
-                    // Sets file to where data is written
+                    
                     HTMLFileWriter = new StreamWriter(outputStream);
                     HTMLFileWriter.Write(HTMLTextBox.Text);
                     HTMLFileWriter.Close();
                 }
                 catch (IOException)
                 {
-                    // Notify user if file does not exist
                     MessageBox.Show("Error opening file.", "Error",
                                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                catch (ArgumentException)
-                {
-                    // User closed the SaveFileDialog without clicking s file
-                } // end try
             }
             else
-            {    // Otherwise, show an error message
-                // If the user did not select a file...
+            {
                 if (string.IsNullOrEmpty(fileName))
                 {
                     MessageBox.Show("Invalid file name.", "Error",
                                     MessageBoxButtons.OK, MessageBoxIcon.Error);
-                } // end if
-            } // end if
+                }
+            }
         }
 
         private void OpenToolStripMenu_Click(object sender, EventArgs e)
@@ -195,7 +186,6 @@ namespace Napier__Douglas___Comp_Sci_Final
                         count++;
                     }
 
-                    // Time to try making this for loop
                     for (int j = 1; j <= MAXLINES - 1; j++)
                     {
                         string test = ourDictionary[j];
